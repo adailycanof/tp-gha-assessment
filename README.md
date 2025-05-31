@@ -1,2 +1,2 @@
-# tp-gha-assessment-pipeline
-tp-gha-assessment-pipeline
+# tp-gha-assessment
+tp-gha-assessment
