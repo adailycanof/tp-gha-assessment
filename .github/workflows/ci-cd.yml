@@ -1,10 +1,11 @@
 name: CI/CD Pipeline
 
 on:
-  workflow_run:
-    workflows: ["Test ECR Access"]
-    types: 
-      - completed
+  workflow_dispatch:
+  pull_request:
+    branches: [ main ]
+  push:
+    branches: [ main ]
 
 env:
   AWS_REGION: eu-west-2
@@ -14,8 +15,6 @@ env:
 
 jobs:
   test:
-    # only run if Test ECR Access finished with success
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -43,7 +42,7 @@ jobs:
     needs: test
     runs-on: ubuntu-latest
     # Only deploy on the main branch
-    if: ${{ github.event.workflow_run.conclusion == 'success' }} && github.event.workflow_run.head_branch == 'main'
+    if: github.ref == 'refs/heads/main'
     steps:
       - uses: actions/checkout@v3
       
