@@ -42,8 +42,8 @@ jobs:
   deploy:
     needs: test
     runs-on: ubuntu-latest
-    # Only deploy on the main branch
-    if: github.ref == 'refs/heads/main'
+    # Only deploy on push to main branch, not on pull requests
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     steps:
       - uses: actions/checkout@v3
       
