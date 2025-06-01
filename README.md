@@ -197,10 +197,6 @@ The application is containerized using a multi-stage Docker build:
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## 📝 License
-
-This project is created for assessment purposes.
-
 ## 🆘 Troubleshooting
 
 ### Common Issues
@@ -219,13 +215,3 @@ This project is created for assessment purposes.
 - Clear Docker cache: `docker system prune`
 - Rebuild without cache: `docker build --no-cache`
 - Check Dockerfile syntax and layer caching
-
-### Getting Help
-
-- Check GitHub Actions logs for CI/CD issues
-- Review AWS CloudWatch logs for runtime errors
-- Use `docker logs <container-id>` for local Docker debugging
-
----
-
-**Last Updated**: June 2025
