@@ -12,6 +12,7 @@ env:
   ECR_REPOSITORY: flask-tp-app
   ECS_SERVICE: tp-assessment-sh-dev-service
   ECS_CLUSTER: tp-assessment-sh-dev-cluster
+  IMAGE_TAG: latest
 
 jobs:
   test:
@@ -61,7 +62,7 @@ jobs:
         id: build-image
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          IMAGE_TAG:    ${{ github.sha }}
+          IMAGE_TAG:    ${{ env.IMAGE_TAG }}
         run: |
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
