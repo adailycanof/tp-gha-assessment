@@ -9,8 +9,8 @@ on:
 env:
   AWS_REGION: eu-west-2
   ECR_REPOSITORY: flask-app
-  ECS_SERVICE: flask-app-service
-  ECS_CLUSTER: flask-app-cluster
+  ECS_SERVICE: tp-assessment-sh-dev-service
+  ECS_CLUSTER: tp-assessment-sh-dev-cluster
 
 jobs:
   test:
