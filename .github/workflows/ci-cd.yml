@@ -8,7 +8,7 @@ on:
     branches: [ main ]
 
 env:
-  AWS_REGION: eu-west-2
+  AWS_REGION: eu-central-1
   ECR_REPOSITORY: flask-tp-app
   ECS_SERVICE: tp-assessment-sh-dev-service
   ECS_CLUSTER: tp-assessment-sh-dev-cluster
