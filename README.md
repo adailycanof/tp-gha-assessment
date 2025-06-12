@@ -148,7 +148,7 @@ Test files follow the pattern `test_*.py` and use pytest fixtures for applicatio
 ## 🐳 Docker
 
 The application is containerized using a multi-stage Docker build:
-- **🔧 Base**: Python 3.9 slim image
+- **🔧 Base**: Python 3.9 alpine image
 - **📦 Dependencies**: Installed via setup.py
 - **📱 Application**: Copied and configured
 - **🏃 Runtime**: Flask development server on port 5000
